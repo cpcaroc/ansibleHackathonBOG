@@ -6,7 +6,7 @@
   tasks:
     - name: Downgrade package
       ansible.builtin.yum:
-        name: httpd<=2.4
+        name: httpd=2.0
         state: present
         
     - name: Parchado Sistema RedHAt
