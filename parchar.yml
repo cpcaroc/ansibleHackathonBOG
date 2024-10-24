@@ -6,7 +6,13 @@
   tasks:
     - name: Parchado Sistema RedHAt
       when: ansible_os_family == 'RedHat'
+      notify:
+        - restart server
       ansible.builtin.yum:
         name: '*'
         state: latest
-        
+    
+    handlers:
+      - name: restart server
+        ansible.builtin.reboot:
+          msg: "Rebooting server in 5 seconds"
