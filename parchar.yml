@@ -1,0 +1,11 @@
+---
+- name: My primer playbook  
+  hosts: web
+  become: true
+  
+  tasks:
+    - name: Parchado Sistema RedHAt
+      when: ansible_os_family == 'RedHat'
+      ansible.builtin.yum:
+        name: '*'
+        state: latest
