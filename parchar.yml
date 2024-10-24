@@ -12,7 +12,7 @@
         name: '*'
         state: latest
     
-    handlers:
-      - name: restart server
-        ansible.builtin.reboot:
-          msg: "Rebooting server in 5 seconds"
+  handlers:
+    - name: restart server
+      ansible.builtin.reboot:
+        msg: "Rebooting server in 5 seconds"
