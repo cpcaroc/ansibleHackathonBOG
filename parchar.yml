@@ -1,6 +1,6 @@
 ---
 - name: My primer playbook  
-  hosts: web
+  hosts: web2
   become: true
   
   tasks:
@@ -9,3 +9,4 @@
       ansible.builtin.yum:
         name: '*'
         state: latest
+        
