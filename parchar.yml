@@ -4,6 +4,11 @@
   become: true
   
   tasks:
+    - name: Downgrade package
+      ansible.builtin.yum:
+        name: httpd<=2.4
+        state: present
+        
     - name: Parchado Sistema RedHAt
       when: ansible_os_family == 'RedHat'
       notify:
